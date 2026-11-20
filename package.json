@@ -1,0 +1,42 @@
+{
+  "name": "fabric-app-workshop-live-qa",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Workshop Live Q&A: Questions rise as the room votes. A Microsoft Fabric App (Rayfin).",
+  "type": "module",
+  "license": "MIT",
+  "author": "Michael John Peña",
+  "workspaces": [
+    "shared",
+    "apps/workshop-live-qa"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "npm run dev --workspace apps/workshop-live-qa",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "e2e": "npm run e2e --workspace apps/workshop-live-qa",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "check:secrets": "node tools/check-secrets.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@tailwindcss/vite": "^4.1.11",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react-swc": "^4.2.2",
+    "jsdom": "^24.1.0",
+    "mssql": "^11.0.2",
+    "tailwindcss": "^4.1.11",
+    "tsx": "^4.19.2",
+    "typescript": "^5.8.3",
+    "vite": "^7.3.2",
+    "vitest": "^3.2.4"
+  }
+}

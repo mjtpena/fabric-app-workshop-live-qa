@@ -1,0 +1,39 @@
+{
+  "name": "@x10/workshop-live-qa",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode demo --port 5206",
+    "dev:fabric": "rayfin dev",
+    "dev:frontend": "vite",
+    "build": "tsc -b && vite build --mode demo",
+    "build:fabric": "rayfin env --framework vite && tsc -b && vite build --mode fabric",
+    "preview": "vite preview --mode demo --port 5206",
+    "typecheck": "tsc -b",
+    "test": "vitest run",
+    "e2e": "playwright test",
+    "seed:fabric": "node ../../tools/seed-fabric.mjs --app workshop-live-qa",
+    "rayfin:up": "rayfin up",
+    "rayfin:db": "rayfin up db apply"
+  },
+  "dependencies": {
+    "@microsoft/rayfin-auth": "^2.0.0",
+    "@microsoft/rayfin-auth-provider-fabric": "^2.0.0",
+    "@microsoft/rayfin-client": "^2.0.0",
+    "@microsoft/rayfin-core": "^2.0.0",
+    "@microsoft/rayfin-data": "^2.0.0",
+    "@microsoft/rayfin-local-dev": "^2.0.0",
+    "@x10/shared": "*",
+    "lucide-react": "^1.77.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1"
+  },
+  "devDependencies": {
+    "@microsoft/rayfin-cli": "^2.0.0",
+    "@microsoft/rayfin-guide": "^2.0.0",
+    "@types/qrcode": "^1.5.6"
+  }
+}

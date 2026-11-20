@@ -1,0 +1,286 @@
+@import 'tailwindcss';
+@import '@x10/shared/styles.css';
+@source "../../../shared/src";
+
+/* ------------------------------------------------------------------ rising questions: the column and its bubbles */
+
+@layer components {
+  /* The glass column the bubbles rise in. */
+  .qa-column {
+    position: absolute;
+    border-radius: 28px;
+    background:
+      linear-gradient(180deg, color-mix(in oklab, var(--accent-4) 55%, transparent) 0%, color-mix(in oklab, var(--accent-3) 30%, transparent) 55%, color-mix(in oklab, var(--accent-5) 40%, transparent) 100%);
+    box-shadow:
+      inset 0 0 0 1px var(--glass-line),
+      inset 0 24px 48px -24px color-mix(in oklab, var(--accent-9) 18%, transparent),
+      0 30px 60px -30px color-mix(in oklab, var(--accent-9) 35%, transparent);
+  }
+  .qa-column::before {
+    /* A soft vertical highlight on the glass. */
+    content: '';
+    position: absolute;
+    inset: 10px auto 10px 14px;
+    width: 10px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.5), rgb(255 255 255 / 0.05));
+    opacity: 0.55;
+    pointer-events: none;
+  }
+  :root[data-theme='dark'] .qa-column::before {
+    opacity: 0.12;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .qa-column::before {
+      opacity: 0.12;
+    }
+  }
+
+  .qa-bubble {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 999px;
+    transform-origin: 50% 50%;
+    will-change: transform;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .qa-face {
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: radial-gradient(
+      circle at 34% 28%,
+      color-mix(in oklab, white 55%, var(--qa-fill)) 0%,
+      color-mix(in oklab, white 12%, var(--qa-fill)) 26%,
+      var(--qa-fill) 58%,
+      color-mix(in oklab, black 18%, var(--qa-fill)) 100%
+    );
+    color: var(--qa-ink);
+    box-shadow:
+      inset 0 -6px 14px color-mix(in oklab, black 16%, transparent),
+      inset 0 1px 2px rgb(255 255 255 / 0.5),
+      0 10px 22px -10px color-mix(in oklab, var(--qa-fill) 70%, black);
+    transition:
+      transform 160ms cubic-bezier(0.2, 0, 0, 1),
+      opacity 200ms cubic-bezier(0.2, 0, 0, 1),
+      filter 200ms cubic-bezier(0.2, 0, 0, 1);
+  }
+  .qa-face::after {
+    /* Specular highlight. */
+    content: '';
+    position: absolute;
+    left: 18%;
+    top: 11%;
+    width: 36%;
+    height: 22%;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgb(255 255 255 / 0.75), transparent);
+    transform: rotate(-24deg);
+    pointer-events: none;
+  }
+  .qa-bubble.is-dashed .qa-face {
+    outline: 1.5px dashed color-mix(in oklab, var(--qa-ink) 55%, transparent);
+    outline-offset: -5px;
+  }
+  .qa-bubble.is-dim .qa-face {
+    opacity: 0.32;
+    filter: saturate(0.4);
+  }
+  .qa-bubble.is-mine::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 999px;
+    border: 1.5px dashed var(--accent-11);
+    opacity: 0.8;
+  }
+  .qa-bubble:hover .qa-face,
+  .qa-bubble:focus-visible .qa-face {
+    transform: scale(1.05);
+  }
+  .qa-bubble:active .qa-face {
+    transform: scale(0.94);
+  }
+  .qa-bubble:focus-visible {
+    outline: none;
+  }
+  .qa-bubble:focus-visible::after,
+  .qa-bubble.is-focused::after {
+    content: '';
+    position: absolute;
+    inset: -7px;
+    border-radius: 999px;
+    border: 2px solid var(--accent-9);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent-9) 18%, transparent);
+  }
+  .qa-bubble.is-focused::after {
+    animation: qa-halo 1.8s cubic-bezier(0.2, 0, 0, 1) infinite;
+  }
+  .qa-bubble.is-popping .qa-face {
+    animation: qa-pop 520ms cubic-bezier(0.2, 0, 0, 1);
+  }
+  .qa-bubble.is-bumped .qa-face {
+    animation: qa-inflate 600ms cubic-bezier(0.2, 0, 0, 1);
+  }
+  .qa-ripple {
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    border: 2px solid var(--qa-fill);
+    animation: qa-ripple 900ms cubic-bezier(0.2, 0, 0, 1) forwards;
+    pointer-events: none;
+  }
+  .qa-plus {
+    position: absolute;
+    left: 50%;
+    top: -6px;
+    translate: -50% 0;
+    font: 600 12px/1 var(--mono);
+    color: var(--accent-11);
+    animation: qa-float 1100ms cubic-bezier(0.2, 0, 0, 1) forwards;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .qa-callout {
+    position: absolute;
+    left: 0;
+    top: 0;
+    will-change: transform;
+  }
+
+  /* The upvote press: sinks under the thumb, springs back, and bursts once when the vote lands. */
+  .qa-upvote {
+    transition:
+      transform 140ms cubic-bezier(0.2, 0, 0, 1),
+      background-color 160ms cubic-bezier(0.2, 0, 0, 1),
+      color 160ms cubic-bezier(0.2, 0, 0, 1),
+      box-shadow 160ms cubic-bezier(0.2, 0, 0, 1);
+  }
+  .qa-upvote:active:not(:disabled) {
+    transform: scale(0.9);
+  }
+  .qa-upvote .qa-burst {
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    border: 2px solid var(--accent-9);
+    animation: qa-ripple 650ms cubic-bezier(0.2, 0, 0, 1) forwards;
+    pointer-events: none;
+  }
+  .qa-upvote .qa-count {
+    animation: qa-tick 320ms cubic-bezier(0.2, 0, 0, 1);
+  }
+}
+
+@keyframes qa-halo {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent-9) 22%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 9px color-mix(in oklab, var(--accent-9) 6%, transparent);
+  }
+}
+@keyframes qa-pop {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.18);
+    filter: brightness(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes qa-inflate {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes qa-ripple {
+  from {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+@keyframes qa-float {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-26px);
+    opacity: 0;
+  }
+}
+@keyframes qa-tick {
+  from {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qa-bubble .qa-face,
+  .qa-bubble::after,
+  .qa-ripple,
+  .qa-plus,
+  .qa-upvote,
+  .qa-upvote .qa-burst,
+  .qa-upvote .qa-count {
+    animation: none !important;
+    transition: none !important;
+  }
+  .qa-ripple,
+  .qa-plus,
+  .qa-upvote .qa-burst {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------------ big screen: a fixed projector palette */
+
+.qa-screen {
+  color-scheme: dark;
+  --scr-bg: #0f0d17;
+  --scr-bg-2: #171328;
+  --scr-panel: rgb(255 255 255 / 0.05);
+  --scr-line: rgb(255 255 255 / 0.1);
+  --scr-text: #f4f1ff;
+  --scr-muted: #bdb4dc;
+  --scr-accent: #8b5cf6;
+  --scr-accent-2: #b7a4ff;
+  --scr-ok: #3dd68c;
+  background:
+    radial-gradient(1200px 700px at 18% -10%, rgb(139 92 246 / 0.32), transparent 60%),
+    radial-gradient(900px 600px at 100% 110%, rgb(91 61 196 / 0.28), transparent 60%),
+    linear-gradient(180deg, var(--scr-bg-2), var(--scr-bg));
+  color: var(--scr-text);
+}
+
+.qa-screen .qa-column {
+  background: linear-gradient(180deg, rgb(139 92 246 / 0.16), rgb(255 255 255 / 0.03));
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.08);
+}
+.qa-screen .qa-column::before {
+  opacity: 0.1;
+}

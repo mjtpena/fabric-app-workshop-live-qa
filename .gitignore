@@ -1,0 +1,43 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+dist-demo
+*.tsbuildinfo
+.vite
+
+# Tests
+coverage
+test-results
+playwright-report
+blob-report
+
+# Local env files (rayfin env writes .env.local)
+*.local
+
+# Rayfin — auto-generated or secret-bearing files
+rayfin/.env*
+**/rayfin/.env*
+**/rayfin/.deployments.json
+**/rayfin/.*.tmp
+**/rayfin/.temp/
+rayfin.config.json
+
+# Demo recordings: raw captures and voice cache (final MP4s are kept under apps/*/demo/out)
+**/demo/.work/
+**/demo/voice/
+
+# Logs
+logs
+*.log
+
+# Editor / OS
+.idea
+.DS_Store
+*.suo
+*.sw?
+
+# Gallery post media generated from the demo videos (GIF and WMV)
+docs/gallery/media/

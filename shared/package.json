@@ -1,0 +1,43 @@
+{
+  "name": "@x10/shared",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Shared scaffold for the Fabric Apps x10 monorepo: data store, identity, UI kit, charts, mock clients and test helpers.",
+  "exports": {
+    "./data": "./src/data/index.ts",
+    "./identity": "./src/identity/index.ts",
+    "./runtime": "./src/runtime/index.tsx",
+    "./ui": "./src/ui/index.tsx",
+    "./charts": "./src/ui/charts.tsx",
+    "./lib": "./src/lib/index.ts",
+    "./connectors": "./src/connectors/index.ts",
+    "./test": "./src/test/index.ts",
+    "./e2e": "./src/e2e/index.ts",
+    "./demo": "./src/demo/types.ts",
+    "./styles.css": "./src/ui/styles.css",
+    "./motion": "./src/ui/motion.tsx"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "playground": "vite --config playground/vite.config.ts",
+    "playground:build": "vite build --config playground/vite.config.ts",
+    "gen:palette": "tsx scripts/gen-palette.ts"
+  },
+  "dependencies": {
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "@microsoft/rayfin-auth": "^2.0.0",
+    "@microsoft/rayfin-auth-provider-fabric": "^2.0.0",
+    "@microsoft/rayfin-client": "^2.0.0",
+    "@microsoft/rayfin-data": "^2.0.0",
+    "lucide-react": "^1.77.0",
+    "motion": "^14.14.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1",
+    "recharts": "^2.15.1"
+  }
+}

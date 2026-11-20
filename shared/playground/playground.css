@@ -1,0 +1,4 @@
+@import 'tailwindcss';
+@import '../src/ui/styles.css';
+@source '../src';
+@source './';

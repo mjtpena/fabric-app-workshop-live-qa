@@ -1,0 +1,125 @@
+/**
+ * @x10/shared/ui: the design-system kit. API reference: shared/src/ui/README.md. Playground: `npm run playground -w shared`.
+ */
+export {
+  cx,
+  Button,
+  IconButton,
+  LinkButton,
+  buttonClass,
+  Spinner,
+  StatusDot,
+  Chip,
+  Badge,
+  Tag,
+  Kbd,
+  Avatar,
+  AvatarStack,
+  LogoTile,
+  MonogramGlyph,
+  initials,
+  toneSolid,
+  toneSoft,
+  toneText,
+  toneVar,
+  type Tone,
+  type Variant,
+  type Size,
+  type ButtonProps,
+  type IconButtonProps,
+  type BadgeVariant,
+  type AvatarSize,
+} from './core';
+
+export {
+  Card,
+  PageHeader,
+  Section,
+  Toolbar,
+  Stat,
+  StatStrip,
+  Delta,
+  KpiCard,
+  KpiRow,
+  TableWrap,
+  Table,
+  Th,
+  Td,
+  Tr,
+  List,
+  type StatDelta,
+} from './layout';
+
+export { Field, Input, TextArea, Select, Checkbox, Switch, SearchInput, FilterSelect, SegmentedControl, type SegmentOption } from './forms';
+
+export {
+  ErrorPanel,
+  EmptyState,
+  Skeleton,
+  SkeletonText,
+  LoadingBlock,
+  DataState,
+  InlineError,
+  Callout,
+  Toast,
+  Meter,
+  Progress,
+  ProgressRing,
+  ShareBar,
+  Timeline,
+  Countdown,
+  formatCountdown,
+  CopyButton,
+  type TimelineItem,
+} from './feedback';
+
+export {
+  Tooltip,
+  Popover,
+  Menu,
+  MenuItem,
+  MenuSeparator,
+  MenuLabel,
+  Dialog,
+  Sheet,
+  ConfirmDialog,
+  Tabs,
+  type MenuEntry,
+  type Placement,
+} from './overlays';
+
+export {
+  StagePage,
+  ImmersiveLayout,
+  FloatingPanel,
+  LensBar,
+  ViewAsSwitch,
+  ViewToggle,
+  Legend,
+  TodayPanel,
+  Breadcrumb,
+  StageMessage,
+  type StagePageProps,
+  type StageView,
+  type LensOption,
+  type ViewAsOption,
+  type LegendItem,
+  type TodayItem,
+  type BreadcrumbItem,
+} from './stage';
+
+export {
+  useHotkeys,
+  useReducedMotion,
+  useMediaQuery,
+  useIsDesktop,
+  supportsWebGL,
+  useThemeColors,
+  cssVar,
+  WORLD_TOKENS,
+  type HotkeyHandler,
+  type ThemeColors,
+  type WorldToken,
+} from './hooks';
+
+export { ACCENTS, type AccentName } from './palette';
