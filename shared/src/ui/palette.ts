@@ -10,7 +10,11 @@
  * No DOM or React here: it runs in Node and in Vitest.
  */
 
-export const ACCENTS = ['indigo', 'ember', 'blue', 'plum', 'amber', 'violet', 'coral', 'teal', 'gold', 'cyan'] as const;
+export const ACCENTS = [
+  'indigo', 'ember', 'blue', 'plum', 'amber', 'violet', 'coral', 'teal', 'gold', 'cyan',
+  // second set of ten apps
+  'bronze', 'magenta', 'sky', 'slate', 'crimson', 'jade', 'sea', 'orange', 'olive', 'lime',
+] as const;
 export type AccentName = (typeof ACCENTS)[number];
 
 /** Hues used by status colours (ok = green, warn = amber, bad = red, info = blue). */
@@ -42,6 +46,17 @@ export const HUES: HueSpec[] = [
   { name: 'teal', h: 182, c: 0.12, solidL: 0.53, on: 'white' },
   { name: 'gold', h: 88, c: 0.13, solidL: 0.74, on: 'dark' },
   { name: 'cyan', h: 214, c: 0.13, solidL: 0.75, on: 'dark' },
+  // second set of ten apps
+  { name: 'bronze', h: 62, c: 0.09, solidL: 0.56, on: 'white' },
+  { name: 'magenta', h: 330, c: 0.22, solidL: 0.55, on: 'white' },
+  { name: 'sky', h: 236, c: 0.14, solidL: 0.6, on: 'white' },
+  { name: 'slate', h: 255, c: 0.045, solidL: 0.5, on: 'white' },
+  { name: 'crimson', h: 10, c: 0.19, solidL: 0.5, on: 'white' },
+  { name: 'jade', h: 165, c: 0.12, solidL: 0.55, on: 'white' },
+  { name: 'sea', h: 200, c: 0.1, solidL: 0.55, on: 'white' },
+  { name: 'orange', h: 50, c: 0.18, solidL: 0.7, on: 'dark' },
+  { name: 'olive', h: 105, c: 0.09, solidL: 0.58, on: 'white' },
+  { name: 'lime', h: 128, c: 0.19, solidL: 0.82, on: 'dark' },
   { name: 'green', h: 152, c: 0.15, solidL: 0.53, on: 'white' },
   { name: 'red', h: 25, c: 0.21, solidL: 0.55, on: 'white' },
 ];

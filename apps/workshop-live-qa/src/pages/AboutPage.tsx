@@ -79,7 +79,7 @@ export function AboutPage() {
         ))}
       </ul>
 
-      <p className="mt-10 text-xs text-faint">Built by Datachain Consulting for AI @Work. Runs on Microsoft Fabric Apps (preview).</p>
+      <p className="mt-10 text-xs text-faint">Built by Datachain Consulting for AI @Work. Runs on Microsoft Fabric Apps.</p>
     </article>
   );
 }

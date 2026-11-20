@@ -18,6 +18,16 @@ export const DEFAULT_ACCENTS: Record<string, AccentName> = {
   'request-triage': 'teal',
   'endorsement-queue': 'gold',
   'model-explainer': 'cyan',
+  'access-review': 'bronze',
+  'privacy-clock': 'magenta',
+  'ai-register': 'sky',
+  'third-party-register': 'slate',
+  'legal-hold': 'crimson',
+  'payee-change-guard': 'jade',
+  'excursion-desk': 'sea',
+  'haccp-log': 'orange',
+  'evidence-room': 'olive',
+  'near-miss': 'lime',
 };
 
 export function resolveAccent(appId: string, accent?: string): AccentName {

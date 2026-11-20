@@ -1,119 +1,119 @@
 1
-00:00:03,202 --> 00:00:06,548
+00:00:03,203 --> 00:00:06,549
 This is Workshop Live Q&A, a question board for
 
 2
-00:00:06,548 --> 00:00:09,822
+00:00:06,549 --> 00:00:09,823
 live training sessions, built as a Fabric App.
 
 3
-00:00:10,272 --> 00:00:13,889
+00:00:10,273 --> 00:00:13,890
 Every question is a bubble in this column: the more votes
 
 4
-00:00:13,889 --> 00:00:17,252
+00:00:13,890 --> 00:00:17,253
 it gets, the bigger it grows and the higher it rises.
 
 5
-00:00:18,338 --> 00:00:23,564
+00:00:18,257 --> 00:00:23,483
 Lenses re-paint the same column: Newest floats the freshest questions
 
 6
-00:00:23,564 --> 00:00:27,048
+00:00:23,483 --> 00:00:26,967
 up, and Answered swaps them in from the shelf.
 
 7
-00:00:27,498 --> 00:00:29,946
+00:00:27,417 --> 00:00:29,865
 Pinned shows what the host docked at the
 
 8
-00:00:29,946 --> 00:00:32,088
+00:00:29,865 --> 00:00:32,007
 top and what they parked for later.
 
 9
-00:00:35,169 --> 00:00:39,216
+00:00:34,962 --> 00:00:39,009
 The Today panel ranks what needs attention, and one click focuses
 
 10
-00:00:39,216 --> 00:00:42,579
+00:00:39,009 --> 00:00:42,372
 the bubble behind it, with the host actions beside it.
 
 11
-00:00:43,382 --> 00:00:47,260
+00:00:43,171 --> 00:00:47,049
 The host can view the board as an attendee: hidden questions
 
 12
-00:00:47,260 --> 00:00:51,202
+00:00:47,049 --> 00:00:50,991
 and anonymous names disappear, exactly as the room sees them.
 
 13
-00:00:53,483 --> 00:00:56,224
+00:00:53,224 --> 00:00:55,965
 Attendees scan the QR code, or type the
 
 14
-00:00:56,224 --> 00:00:58,613
+00:00:55,965 --> 00:00:58,354
 code, and land on the same column.
 
 15
-00:00:59,063 --> 00:01:02,731
+00:00:58,804 --> 00:01:02,472
 Asking takes one box, and voting is a big button
 
 16
-00:01:02,731 --> 00:01:06,933
+00:01:02,472 --> 00:01:06,674
 under the thumb; the bubble inflates as the vote lands.
 
 17
-00:01:07,383 --> 00:01:10,517
+00:01:07,124 --> 00:01:10,258
 Each person can have five unanswered questions, and
 
 18
-00:01:10,517 --> 00:01:13,343
+00:01:10,258 --> 00:01:13,084
 the limit is checked again just before saving.
 
 19
-00:01:14,302 --> 00:01:18,102
+00:01:13,896 --> 00:01:17,696
 The host deck is a moderation queue built for the
 
 20
-00:01:18,102 --> 00:01:21,902
+00:01:17,696 --> 00:01:21,496
 keyboard: J and K move, A marks answered, P pins.
 
 21
-00:01:22,352 --> 00:01:24,912
+00:01:21,946 --> 00:01:24,506
 When someone else asks, a pill counts the new
 
 22
-00:01:24,912 --> 00:01:28,212
+00:01:24,506 --> 00:01:27,806
 questions instead of reshuffling the queue while you read.
 
 23
-00:01:28,662 --> 00:01:31,492
+00:01:28,256 --> 00:01:31,086
 Press the question mark for every shortcut.
 
 24
-00:01:32,297 --> 00:01:36,947
+00:01:31,893 --> 00:01:36,543
 The big screen fills a projector with the top five in large type,
 
 25
-00:01:36,947 --> 00:01:41,167
+00:01:36,543 --> 00:01:40,763
 the join code and a QR code, and re-orders as votes arrive.
 
 26
-00:01:41,977 --> 00:01:45,692
+00:01:41,570 --> 00:01:45,285
 Closing the session opens the wrap-up: a snapshot of the
 
 27
-00:01:45,692 --> 00:01:48,877
+00:01:45,285 --> 00:01:48,470
 column, then what was answered and what was not.
 
 28
-00:01:49,327 --> 00:01:53,747
+00:01:48,920 --> 00:01:53,340
 It copies out as Markdown, with anonymous questions kept anonymous.
 
 29
-00:01:54,546 --> 00:01:58,268
+00:01:54,156 --> 00:01:57,878
 Ask, vote, watch it rise: one small Fabric
 
 30
-00:01:58,268 --> 00:02:02,345
+00:01:57,878 --> 00:02:01,955
 App keeps a workshop’s questions in one place.

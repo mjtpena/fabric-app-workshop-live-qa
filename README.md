@@ -4,7 +4,7 @@ A live question board for training sessions. Attendees join with a short code (o
 questions, optionally anonymously, and upvote each other's. The facilitator sees the top unanswered questions, marks
 them answered, parks, pins, hides or rewords them, and projects a clean big-screen view with the join code and QR code.
 When the session ends, the wrap-up lists what was answered and what was not, ready to copy as Markdown. Built for
-virtual cohorts of 15 to 20 people; works for any session. A Microsoft Fabric App (Rayfin 2.0, preview).
+virtual cohorts of 15 to 20 people; works for any session. A Microsoft Fabric App (Rayfin 2.0).
 
 ![Screenshot](apps/workshop-live-qa/docs/screenshot.png)
 
@@ -49,7 +49,7 @@ Demo video (about 2 minutes, AI-generated narration, captions burned in): [demo/
 
 ## 1. Prerequisites
 
-- A Microsoft Fabric tenant with the **Fabric Apps** workload enabled (preview).
+- A Microsoft Fabric tenant with the **Fabric Apps** workload enabled.
 - A workspace on a Fabric capacity, and **Edit** permission (Contributor or higher) on it to deploy.
 - Node.js 20 or later (the monorepo is tested on Node 24).
 - **Audience:** deployed apps accept Fabric sign-in (Microsoft Entra ID) only, and every attendee needs access to the

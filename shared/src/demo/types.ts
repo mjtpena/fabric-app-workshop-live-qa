@@ -6,7 +6,7 @@
  * Writing rules for `say` lines (they are spoken by a cloned voice, first person, practitioner to practitioner):
  * - One sentence per line, at most ~22 words. Plain, specific, no hype words (game-changer, seamless, unlock, leverage).
  * - Say product names as people say them ("Fabric", "Power BI", "DAX", "SQL"). No URLs, ids or paths in speech.
- * - Only claim what the screen shows. Fabric Apps is in preview; say "preview" where it matters.
+ * - Only claim what the screen shows. Fabric Apps is generally available; never call it "preview".
  * - A scene lasts at least as long as its narration; actions run while the voice speaks, so put the visible payoff
  *   early in `run` and use `h.pause()` to hold on it.
  * - 6 to 10 scenes, 90 to 150 seconds total. Scene 1 is a hook over the most impressive screen; the last scene is a

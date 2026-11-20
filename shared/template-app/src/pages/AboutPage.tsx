@@ -7,7 +7,7 @@ export function AboutPage() {
       <PageHeader title="About __TITLE__" subtitle="__TAGLINE__" />
       <Card>
         <p className="mt-0">Describe the app, its rules and its limits here.</p>
-        <p className="mb-0 text-sm text-muted">Built by Datachain Consulting for AI @Work. Runs on Microsoft Fabric Apps (preview).</p>
+        <p className="mb-0 text-sm text-muted">Built by Datachain Consulting for AI @Work. Runs on Microsoft Fabric Apps.</p>
       </Card>
     </>
   );
